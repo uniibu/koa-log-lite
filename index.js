@@ -19,7 +19,7 @@ module.exports = (opts = {}) => async function koaLogLite(ctx, next) {
   if (ignorePathRegex && !(ignorePathRegex instanceof RegExp)) {
     ignorePathRegex = null;
   }
-  if (!ignorePathRegex || ignorePathRegex.test(ctx.path)) {
+  if (!ignorePathRegex || !ignorePathRegex.test(ctx.path)) {
     const start = Date.now();
     const print = `${ctx.method} ${ctx.originalUrl} | ${ctx.ip}`;
     try {
