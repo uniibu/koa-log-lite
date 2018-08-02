@@ -12,6 +12,13 @@
   ],
   "author": "Uni Sayo <unibtc@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "postpublish": "git push origin master --follow-tags",
+    "lint": "eslint --fix --ext .js ."
+  },
   "repository": "https://github.com/uniibu/koa-log-lite",
   "bugs": {
     "url": "https://github.com/uniibu/koa-log-lite/issues"
