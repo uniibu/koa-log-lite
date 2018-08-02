@@ -15,12 +15,11 @@ function bytes(bd) {
   }
 }
 module.exports = (opts = {}) => async function koaLogLite(ctx, next) {
-  let ignorePath = opts.ignorePath || [];
-  if (!Array.isArray(ignorePath)) {
-    ignorePath = [ignorePath];
+  let ignorePathRegex = opts.ignorePath;
+  if (ignorePathRegex && !(ignorePathRegex instanceof RegExp)) {
+    ignorePathRegex = null;
   }
-  const logIt = ignorePath.includes(ctx.originalUrl);
-  if (!logIt) {
+  if (!ignorePathRegex || ignorePathRegex.test(ctx.path)) {
     const start = Date.now();
     const print = `${ctx.method} ${ctx.originalUrl} | ${ctx.ip}`;
     try {
