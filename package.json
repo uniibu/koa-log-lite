@@ -1,0 +1,30 @@
+{
+  "name": "koa-log-lite",
+  "version": "1.0.5",
+  "description": "simple and lightweight api request logging based on koa-logger",
+  "private": false,
+  "engines": {
+    "node": ">=8 <=10"
+  },
+  "main": "index.js",
+  "keywords": [
+    "koa logger log api koa-logger api-logger request-logger koajs"
+  ],
+  "author": "Uni Sayo <unibtc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "postpublish": "git push origin master --follow-tags",
+    "lint": "eslint --fix --ext .js ."
+  },
+  "repository": "https://github.com/uniibu/koa-log-lite",
+  "bugs": {
+    "url": "https://github.com/uniibu/koa-log-lite/issues"
+  },
+  "homepage": "https://github.com/uniibu/koa-log-lite#readme",
+  "devDependencies": {
+    "eslint": "^5.1.0"
+  }
+}
