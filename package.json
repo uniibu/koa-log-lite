@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/uniibu/koa-log-lite#readme",
   "devDependencies": {
-    "eslint": "^5.1.0"
+    "eslint": "^7.11.0"
   }
 }
